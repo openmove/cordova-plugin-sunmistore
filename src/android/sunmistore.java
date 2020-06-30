@@ -18,13 +18,23 @@ public class SunmiStore extends CordovaPlugin {
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext){
         if (action.equals("openstore")) {
 
+            Context context = this.cordova.getActivity().getApplicationContext();
+
             if (args.length() < 1){
                 return false;
             }
 
-            Context context = this.cordova.getActivity().getApplicationContext();
+            String PACKAGE_NAME = null;
+            
+            try {
+                PACKAGE_NAME = args.getString(0);
+            }catch(JSONException e) {
 
-            String PACKAGE_NAME = args.getString(0);
+            }
+
+            if (PACKAGE_NAME == null) {
+                return false;
+            }
 
             String uri = String.format("market://woyou.market/appDetail?packageName=%s", PACKAGE_NAME);
 

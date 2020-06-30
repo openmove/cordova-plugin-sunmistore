@@ -1,0 +1,22 @@
+{
+    "name": "cordova-plugin-sunmistore",
+    "version": "1.0.0",
+    "description": "A plugin to open sunmi store",
+    "cordova": {
+      "id": "cordova-plugin-sunmistore",
+      "platforms": [
+        "android"
+      ]
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/openmove/cordova-plugin-sunmistore.git"
+    },
+    "keywords": [
+      "cordova",
+      "plugin",
+      "sunmi"
+    ],
+    "author": "OpenMove team",
+    "license": "Apache-2"
+  }

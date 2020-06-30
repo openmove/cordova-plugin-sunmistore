@@ -27,7 +27,7 @@ public class SunmiStore extends CordovaPlugin {
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
             intent.addCategory(Intent.CATEGORY_DEFAULT);
 
-            PackageManager packageManager = getPackageManager();
+            PackageManager packageManager = this.cordova.getActivity().getApplicationContext().getPackageManager();
 
             List activities = packageManager.queryIntentActivities(intent,
                     PackageManager.MATCH_DEFAULT_ONLY);

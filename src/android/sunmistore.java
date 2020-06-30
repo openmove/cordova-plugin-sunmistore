@@ -3,11 +3,13 @@ package com.openmove.sunmistore;
 import org.apache.cordova.*;
 import org.json.JSONArray;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import java.util.List;
 
 public class SunmiStore extends CordovaPlugin {
     String TAG = "SunmiStorePlugin";
@@ -20,6 +22,8 @@ public class SunmiStore extends CordovaPlugin {
                 return false;
             }
 
+            Context context = this.cordova.getActivity().getApplicationContext();
+
             String PACKAGE_NAME = args.getString(0);
 
             String uri = String.format("market://woyou.market/appDetail?packageName=%s", PACKAGE_NAME);
@@ -27,7 +31,7 @@ public class SunmiStore extends CordovaPlugin {
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
             intent.addCategory(Intent.CATEGORY_DEFAULT);
 
-            PackageManager packageManager = this.cordova.getActivity().getApplicationContext().getPackageManager();
+            PackageManager packageManager = context.getPackageManager();
 
             List activities = packageManager.queryIntentActivities(intent,
                     PackageManager.MATCH_DEFAULT_ONLY);
@@ -36,7 +40,7 @@ public class SunmiStore extends CordovaPlugin {
 
             if (isIntentSafe) {
                 callbackContext.success();
-                startActivity(intent);
+                context.startActivity(intent);
             } else {
                 callbackContext.error("Intent not safe");
             }

@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import java.util.List;
+import org.json.JSONException;
 
 public class SunmiStore extends CordovaPlugin {
     String TAG = "SunmiStorePlugin";

@@ -3,6 +3,12 @@ package com.openmove.sunmistore;
 import org.apache.cordova.*;
 import org.json.JSONArray;
 
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.View;
+
 public class SunmiStore extends CordovaPlugin {
     String TAG = "SunmiStorePlugin";
 

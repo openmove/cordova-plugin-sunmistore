@@ -1,6 +1,6 @@
 {
     "name": "cordova-plugin-sunmistore",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "description": "A plugin to open sunmi store",
     "cordova": {
       "id": "cordova-plugin-sunmistore",
